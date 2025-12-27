@@ -1,0 +1,86 @@
+/* 1) Smooth scroll όταν πατάς links (#menu κλπ) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2) Επειδή το navbar είναι fixed-top, αλλιώς "κρύβει" την αρχή του section */
+section {
+  scroll-margin-top: 80px; /* άλλαξέ το αν το navbar γίνει πιο ψηλό */
+}
+
+/* 3) Μικρή σκιά στο navbar για να ξεχωρίζει από το background */
+.navbar {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 4) Hero: γεμίζει την οθόνη και έχει background φωτογραφία + σκοτεινό overlay */
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("img/hero.jpg") center/cover no-repeat;
+
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+/* 5) Κοινό padding για sections */
+.section-pad {
+  padding: 96px 0;
+}
+
+/* Σε κινητό λίγο μικρότερο padding */
+@media (max-width: 576px) {
+  .section-pad {
+    padding: 72px 0;
+  }
+}
+
+/* 6) Gallery εικόνες (σταθερό ύψος, crop ωραίο) */
+.gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* 7) Back-to-top button: κρυφό αρχικά, εμφανίζεται με class .show */
+#backToTop {
+  position: fixed !important;
+
+  right: 18px !important;
+  left: auto !important;
+  bottom: 18px !important;
+
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+
+  display: grid;
+  place-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+
+  z-index: 1050; /* πάνω και από navbar */
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("img/hero.jpg") center / cover no-repeat;
+
+  color: #fff;
+  display: flex;
+  align-items: center;
+}

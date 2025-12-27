@@ -1,0 +1,98 @@
+{
+  "brand": "O Tsolias",
+
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "photos": "Photos",
+    "events": "Events",
+    "contact": "Contact"
+  },
+
+  "hero": {
+    "title": "Restaurant «O Tsolias»",
+    "subtitle": "Traditional flavors • Fresh meats • Cozy atmosphere"
+  },
+
+  "menu": {
+    "title": "Menu",
+    "subtitle": "Sample items — customize as needed.",
+    "pdfBtn": "Download PDF",
+
+    "categories": [
+      {
+        "name": "Starters",
+        "items": [
+          {
+            "name": "Tzatziki",
+            "price": "€3.50",
+            "desc": "Yogurt, cucumber, garlic.",
+            "image": "img/menu/tzatziki.jpg"
+          },
+          {
+            "name": "Saganaki",
+            "price": "€5.50",
+            "desc": "Pan-fried cheese.",
+            "image": "img/menu/saganaki.jpg"
+          },
+          {
+            "name": "Greek Salad",
+            "price": "€7.00",
+            "desc": "Tomato, cucumber, feta, olive oil.",
+            "image": "img/menu/horiatiki.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Main Dishes",
+        "items": [
+          {
+            "name": "Pork Steak",
+            "price": "€11.00",
+            "desc": "Served with fries and salad.",
+            "image": "img/menu/porksteak.jpg"
+          },
+          {
+            "name": "Calamari",
+            "price": "€13.50",
+            "desc": "Fried or grilled.",
+            "image": "img/menu/kalamari.jpg"
+          },
+          {
+            "name": "Moussaka",
+            "price": "€10.50",
+            "desc": "Homemade, oven-baked.",
+            "image": "img/menu/moussaka.jpg"
+          }
+        ]
+      }
+    ]
+  },
+
+  "photos": {
+    "title": "Photos"
+  },
+
+  "events": {
+    "title": "Events",
+    "subtitle": "We host private events, celebrations, and family gatherings in a warm and authentic setting. Contact us to plan your event together, exactly the way you imagine it."
+  },
+
+  "contact": {
+    "title": "Contact",
+    "boxTitle": "Details",
+    "phoneLabel": "Phone:",
+    "phoneValue": "+30 210 8952446",
+    "addressLabel": "Address:",
+    "addressValue": "Varis Ave. 45, Vari 16672",
+    "hoursLabel": "Hours:",
+    "hoursValue": "Daily 12:00–00:00",
+    "callBtn": "Call",
+    "mapsBtn": "Open in Maps",
+    "mapsUrl": "https://maps.google.com/?q=37.8346448,23.7931274"
+  },
+
+  "footer": {
+    "rights": "Copyright © {year} Restaurant O Tsolias. All rights reserved."
+  }
+}
