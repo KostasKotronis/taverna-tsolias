@@ -1,89 +1,70 @@
 // =====================================================
-// app.js — i18n + render menu + UX helpers
+// app.js — i18n + menu carousels + photos/events carousels
 // =====================================================
 
-// 1) Ρυθμίσεις
-const LANG_KEY = "site_lang"; // localStorage key
-let dict = null;              // θα κρατάει τα δεδομένα του JSON (el/en)
+const LANG_KEY = "site_lang";
+let dict = null;
 
-// 2) Helpers για να γράφουμε κείμενο με ασφάλεια
 function setText(id, text) {
   const el = document.getElementById(id);
   if (el) el.textContent = text ?? "";
 }
 
-// Escape για να μην μπορεί να “σπάσει” HTML αν μπει περίεργο string στο JSON
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (m) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
   }[m]));
 }
-function escapeAttr(str) {
-  return escapeHtml(str);
-}
+function escapeAttr(str) { return escapeHtml(str); }
 
-// 3) Φόρτωσε το κατάλληλο JSON (el/en)
 async function loadLanguage(lang) {
   const res = await fetch(`i18n/${lang}.json`, { cache: "no-store" });
   if (!res.ok) throw new Error("Could not load language JSON");
-
   dict = await res.json();
 
-  // αποθήκευση επιλογής
   localStorage.setItem(LANG_KEY, lang);
   document.documentElement.lang = lang;
 
-  // εφαρμογή
   applyTranslations();
-  renderMenu();
+  renderMenuCarousels();
+  renderPhotosCarousel();
+  renderEventsCarousel();
   setActiveLangButton(lang);
 }
 
-// 4) Γέμισε τα strings στα σταθερά σημεία του HTML
 function applyTranslations() {
-  // Brand
   setText("brand", dict.brand);
-  setText("footer-brand", dict.brand);
 
-  // Navbar
   setText("nav-home", dict.nav.home);
   setText("nav-menu", dict.nav.menu);
   setText("nav-photos", dict.nav.photos);
   setText("nav-events", dict.nav.events);
   setText("nav-contact", dict.nav.contact);
 
-  // Hero
   setText("hero-title", dict.hero.title);
   setText("hero-subtitle", dict.hero.subtitle);
 
-  // Menu section
   setText("menu-title", dict.menu.title);
   setText("menu-subtitle", dict.menu.subtitle);
 
-  // Photos
   setText("photos-title", dict.photos.title);
 
-  // Events
   setText("events-title", dict.events.title);
   setText("events-subtitle", dict.events.subtitle);
 
-  // Contact
   setText("contact-title", dict.contact.title);
   setText("contact-box-title", dict.contact.boxTitle);
 
   setText("contact-phone-label", dict.contact.phoneLabel);
   setText("contact-phone-value", dict.contact.phoneValue);
+
   setText("contact-address-label", dict.contact.addressLabel);
   setText("contact-address-value", dict.contact.addressValue);
+
   setText("contact-hours-label", dict.contact.hoursLabel);
   setText("contact-hours-value", dict.contact.hoursValue);
 
   setText("contact-call-btn", dict.contact.callBtn);
-  setText("contact-maps-btn", dict.contact.mapsBtn);
 
   const mapsBtn = document.getElementById("contact-maps-btn");
   if (mapsBtn) {
@@ -91,69 +72,16 @@ function applyTranslations() {
     mapsBtn.href = dict.contact.mapsUrl;
   }
 
-  // Footer
   const year = new Date().getFullYear();
-  setText(
-    "footer-rights",
-    dict.footer.rights.replace("{year}", year)
-  );
+  const rights = (dict.footer?.rights || "").replace("{year}", year);
+  setText("footer-rights", rights);
 }
 
-// 5) Render του μενού ως cards με εικόνες (από dict.menu.categories)
-function renderMenu() {
-  const container = document.getElementById("menu-container");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  dict.menu.categories.forEach((cat) => {
-    // Header για κατηγορία (full width)
-    const header = document.createElement("div");
-    header.className = "col-12";
-    header.innerHTML = `
-      <div class="d-flex align-items-end justify-content-between mt-3">
-        <h3 class="fw-bold mb-0">${escapeHtml(cat.name)}</h3>
-      </div>
-      <hr class="mt-2" />
-    `;
-    container.appendChild(header);
-
-    // Items = cards
-    cat.items.forEach((item) => {
-      const col = document.createElement("div");
-      col.className = "col-12 col-md-6 col-lg-4";
-
-      col.innerHTML = `
-        <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
-          <img
-            src="${escapeAttr(item.image)}"
-            class="card-img-top"
-            alt="${escapeAttr(item.name)}"
-            loading="lazy"
-            style="height: 200px; object-fit: cover;"
-          >
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-start gap-2">
-              <h5 class="card-title fw-bold mb-1">${escapeHtml(item.name)}</h5>
-              <span class="fw-semibold text-nowrap">${escapeHtml(item.price)}</span>
-            </div>
-            ${item.desc ? `<p class="card-text text-muted mb-0">${escapeHtml(item.desc)}</p>` : ""}
-          </div>
-        </div>
-      `;
-
-      container.appendChild(col);
-    });
-  });
-}
-
-// 6) UI για να φαίνεται ποια γλώσσα είναι ενεργή
 function setActiveLangButton(lang) {
   const elBtn = document.getElementById("lang-el");
   const enBtn = document.getElementById("lang-en");
   if (!elBtn || !enBtn) return;
 
-  // κάνουμε toggle classes για να φαίνεται "selected"
   elBtn.classList.toggle("btn-secondary", lang === "el");
   elBtn.classList.toggle("btn-outline-secondary", lang !== "el");
 
@@ -161,12 +89,27 @@ function setActiveLangButton(lang) {
   enBtn.classList.toggle("btn-outline-secondary", lang !== "en");
 }
 
-// 7) Back-to-top button + footer year
-function setupBackToTop() {
-  // footer year
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
+function setupLanguageButtons() {
+  document.getElementById("lang-el")?.addEventListener("click", () => loadLanguage("el"));
+  document.getElementById("lang-en")?.addEventListener("click", () => loadLanguage("en"));
+}
 
+function setupMobileNavAutoClose() {
+  const navMenu = document.getElementById("navMenu");
+  const toggler = document.querySelector(".navbar-toggler");
+  if (!navMenu || !toggler) return;
+
+  const bsCollapse = new bootstrap.Collapse(navMenu, { toggle: false });
+
+  document.querySelectorAll("#navMenu .nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      const isMobile = window.getComputedStyle(toggler).display !== "none";
+      if (isMobile) bsCollapse.hide();
+    });
+  });
+}
+
+function setupBackToTop() {
   const backToTop = document.getElementById("backToTop");
   if (!backToTop) return;
 
@@ -182,31 +125,134 @@ function setupBackToTop() {
   });
 }
 
-// 8) Κλείσιμο burger menu μετά από click σε link (μόνο σε mobile)
-function setupMobileNavAutoClose() {
-  const navMenu = document.getElementById("navMenu");
-  const toggler = document.querySelector(".navbar-toggler");
-  if (!navMenu || !toggler) return;
+/**
+ * Generic Bootstrap carousel builder (with indicators).
+ *
+ * items: [{ src, alt, caption? }]
+ */
+function buildCarouselHtml(carouselId, items) {
+  const indicators = items.map((_, i) => `
+    <button type="button"
+            data-bs-target="#${escapeAttr(carouselId)}"
+            data-bs-slide-to="${i}"
+            class="${i === 0 ? "active" : ""}"
+            ${i === 0 ? 'aria-current="true"' : ""}
+            aria-label="Slide ${i + 1}"></button>
+  `).join("");
 
-  // Bootstrap collapse instance
-  const bsCollapse = new bootstrap.Collapse(navMenu, { toggle: false });
+  const slides = items.map((it, i) => `
+    <div class="carousel-item ${i === 0 ? "active" : ""}">
+      <img src="${escapeAttr(it.src)}" alt="${escapeAttr(it.alt || "")}" class="d-block w-100 carousel-img" loading="lazy">
+      ${it.caption ? `
+        <div class="carousel-caption">
+          <h5 class="mb-0">${escapeHtml(it.caption)}</h5>
+        </div>
+      ` : ""}
+    </div>
+  `).join("");
 
-  document.querySelectorAll("#navMenu .nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      // Αν το toggler είναι ορατό => είμαστε σε mobile layout
-      const isMobile = window.getComputedStyle(toggler).display !== "none";
-      if (isMobile) bsCollapse.hide();
-    });
+  const controls = items.length > 1 ? `
+    <button class="carousel-control-prev" type="button" data-bs-target="#${escapeAttr(carouselId)}" data-bs-slide="prev" aria-label="Previous">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#${escapeAttr(carouselId)}" data-bs-slide="next" aria-label="Next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  ` : "";
+
+  return `
+    <div id="${escapeAttr(carouselId)}" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-indicators">
+        ${indicators}
+      </div>
+      <div class="carousel-inner">
+        ${slides}
+      </div>
+      ${controls}
+    </div>
+  `;
+}
+
+/**
+ * MENU: one carousel per category.
+ * Each slide shows one dish image + caption title (dish name).
+ */
+function renderMenuCarousels() {
+  const container = document.getElementById("menu-container");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  dict.menu.categories.forEach((cat, catIndex) => {
+    const block = document.createElement("div");
+
+    const title = `
+      <div class="d-flex align-items-end justify-content-between flex-wrap gap-2">
+        <h3 class="fw-bold mb-0">${escapeHtml(cat.name)}</h3>
+      </div>
+    `;
+
+    const items = cat.items.map((item) => ({
+      src: item.image,
+      alt: item.name,
+      caption: item.name
+    }));
+
+    const carouselId = `menuCarousel-${catIndex}`;
+    const carousel = buildCarouselHtml(carouselId, items);
+
+    block.innerHTML = `${title}<div class="mt-2">${carousel}</div>`;
+    container.appendChild(block);
   });
 }
 
-// 9) Events για τα κουμπιά γλώσσας
-function setupLanguageButtons() {
-  document.getElementById("lang-el")?.addEventListener("click", () => loadLanguage("el"));
-  document.getElementById("lang-en")?.addEventListener("click", () => loadLanguage("en"));
+/**
+ * PHOTOS: static carousel (edit the list here).
+ */
+
+ function normalizeCarouselItems(items) {
+   // ασφαλές fallback αν λείπει ή είναι άδειο
+   if (!Array.isArray(items) || items.length === 0) return [];
+   return items.map((it, idx) => ({
+     src: it.src,
+     alt: it.alt || `Slide ${idx + 1}`,
+     caption: it.caption || "" // προαιρετικό, δεν το χρησιμοποιούμε εδώ
+   }));
+ }
+
+function renderPhotosCarousel() {
+  const wrap = document.getElementById("photos-carousel-wrap");
+  if (!wrap) return;
+
+  const items = normalizeCarouselItems(dict.photos?.items);
+
+  // αν δεν έχει items, μην δείξεις τίποτα (ή μπορείς να δείξεις μήνυμα)
+  if (items.length === 0) {
+    wrap.innerHTML = "";
+    return;
+  }
+
+  wrap.innerHTML = buildCarouselHtml("photosCarousel", items);
 }
 
-// 10) Boot
+/**
+ * EVENTS: static carousel (edit the list here).
+ */
+function renderEventsCarousel() {
+  const wrap = document.getElementById("events-carousel-wrap");
+  if (!wrap) return;
+
+  const items = normalizeCarouselItems(dict.events?.items);
+
+  if (items.length === 0) {
+    wrap.innerHTML = "";
+    return;
+  }
+
+  wrap.innerHTML = buildCarouselHtml("eventsCarousel", items);
+}
+
+// Boot
 setupBackToTop();
 setupMobileNavAutoClose();
 setupLanguageButtons();

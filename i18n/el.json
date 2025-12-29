@@ -11,118 +11,149 @@
 
   "hero": {
     "title": "Ταβέρνα «Ο Τσολιάς»",
-    "subtitle": "Παραδοσιακές γεύσεις • Φρέσκα Κρέατα • Ζεστός χώρος"
+    "subtitle": "Παραδοσιακές γεύσεις • Φρέσκα κρέατα • Ζεστός χώρος"
   },
 
   "menu": {
     "title": "Μενού",
-    "subtitle": "Ενδεικτικές επιλογές — προσαρμόστε το όπως θέλετε.",
-    "pdfBtn": "Κατέβασμα PDF",
-
+    "subtitle": "...",
     "categories": [
       {
-        "name": "Ορεκτικά",
+        "name": "Σαλάτες",
         "items": [
-          {
-            "name": "Τζατζίκι",
-            "price": "3,50€",
-            "desc": "Γιαούρτι, αγγούρι, σκόρδο.",
-            "image": "img/menu/tzatziki.jpg"
-          },
-          {
-            "name": "Σαγανάκι",
-            "price": "5,50€",
-            "desc": "Τυρί στο τηγάνι.",
-            "image": "img/menu/saganaki.jpg"
-          },
-          {
-            "name": "Χωριάτικη σαλάτα",
-            "price": "7,00€",
-            "desc": "Ντομάτα, αγγούρι, φέτα, ελαιόλαδο.",
-            "image": "img/menu/horiatiki.jpg"
-          },
-          {
-            "name": "Τζατζίκι",
-            "price": "3,50€",
-            "desc": "Γιαούρτι, αγγούρι, σκόρδο.",
-            "image": "img/menu/tzatziki.jpg"
-          },
-          {
-            "name": "Σαγανάκι",
-            "price": "5,50€",
-            "desc": "Τυρί στο τηγάνι.",
-            "image": "img/menu/saganaki.jpg"
-          },
-          {
-            "name": "Χωριάτικη σαλάτα",
-            "price": "7,00€",
-            "desc": "Ντομάτα, αγγούρι, φέτα, ελαιόλαδο.",
-            "image": "img/menu/horiatiki.jpg"
-          },
-          {
-            "name": "Τζατζίκι",
-            "price": "3,50€",
-            "desc": "Γιαούρτι, αγγούρι, σκόρδο.",
-            "image": "img/menu/tzatziki.jpg"
-          },
-          {
-            "name": "Σαγανάκι",
-            "price": "5,50€",
-            "desc": "Τυρί στο τηγάνι.",
-            "image": "img/menu/saganaki.jpg"
-          },
-          {
-            "name": "Χωριάτικη σαλάτα",
-            "price": "7,00€",
-            "desc": "Ντομάτα, αγγούρι, φέτα, ελαιόλαδο.",
-            "image": "img/menu/horiatiki.jpg"
-          }
+          { "name": "Αγγουροντομάτα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Αγγουροσαλάτα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Χωριάτικη σαλάτα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Τσολιάς ανάμεικτη σαλάτα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Ανάμεικτη σαλάτα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Λαχανοσαλάτα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Ντάκος κρητικός", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μαρουλοσαλάτα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Παντζάρι", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Χόρτα εποχής", "image": "img/menu/tzatziki.jpg" }
         ]
       },
       {
-        "name": "Κυρίως Πιάτα",
+        "name": "Τυριά",
         "items": [
-          {
-            "name": "Μπριζόλα χοιρινή",
-            "price": "11,00€",
-            "desc": "Σερβίρεται με πατάτες και σαλάτα.",
-            "image": "img/menu/porksteak.jpg"
-          },
-          {
-            "name": "Μπριζόλα χοιρινή",
-            "price": "11,00€",
-            "desc": "Σερβίρεται με πατάτες και σαλάτα.",
-            "image": "img/menu/porksteak.jpg"
-          },
-          {
-            "name": "Μπριζόλα χοιρινή",
-            "price": "11,00€",
-            "desc": "Σερβίρεται με πατάτες και σαλάτα.",
-            "image": "img/menu/porksteak.jpg"
-          }
+          { "name": "Κεφαλογραβιέρα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Τυρί σαγανάκι", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Φέτα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Φέτα ψητή (με ντομάτα & πιπεριά)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Ταλαγάνι σχάρας", "image": "img/menu/tzatziki.jpg" }
+        ]
+      },
+      {
+        "name": "Ζεστά Ορεκτικά",
+        "items": [
+          { "name": "Κολοκυθάκια τηγανιτά", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Σουφλέ μελιτζάνας", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μελιτζάνες τηγανιτές", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Πιπεριές τηγανιτές - ψητές", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Ψητά λαχανικά", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Ψητά λαχανικά με ταλαγάνι σχάρας", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Πατάτες τηγανιτές", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Πατάτες τηγανιτές με τυρί", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Πατάτες φούρνου", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Τυροπιτάκια", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Κεφαλάκι", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Κοκορέτσι", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Κοντοσούβλι", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Λουκάνικο χωριάτικο", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μεζεδάκια ψητά (κιλό)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μεζεδάκια ψητά (μερίδα)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Συκώτι αρνίσιο", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Συκώτι μοσχαρίσιο", "image": "img/menu/tzatziki.jpg" }
+        ]
+      },
+      {
+        "name": "Κρύα Ορεκτικά",
+        "items": [
+          { "name": "Μελιτζανοσαλάτα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Τζατζίκι", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Τυροκαυτερή", "image": "img/menu/tzatziki.jpg" }
+        ]
+      },
+      {
+        "name": "Ψητά Σχάρας",
+        "items": [
+          { "name": "Παϊδάκια γάλακτος (κιλό)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Παϊδάκια μπούτι γάλακτος (κιλό)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Παϊδάκια γάλακτος (μερίδα)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μπιφτέκι μοσχαρίσιο", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μπριζόλα μοσχίσια σταβλίσια (κιλό)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μπριζόλα μοσχίσια μερίδα", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μπριζόλα μοσχαρίσια γάλακτος (μερίδα)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μπριζόλα χωρίς κόκκαλο (rib eye)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Προβατίνα (κιλό)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Φιλέτο μοσχαρίσιο", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Σουβλάκι μοσχαρίσιο", "image": "img/menu/tzatziki.jpg" },
+          { "name": "T-bone steak (κιλό)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μπριζόλα χοιρινή", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Ψαρονέφρι", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Πανσέτα χοιρινή", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Σουβλάκι χοιρινό", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Κοτόπουλο (κιλό)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Κοτόπουλο (μερίδα)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Σουβλάκι κοτόπουλο", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Φιλέτο κοτόπουλο", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Μπιφτέκι γεμιστό με φέτα", "image": "img/menu/tzatziki.jpg" }
+        ]
+      },
+      {
+        "name": "Ψητά Σούβλας",
+        "items": [
+          { "name": "Αρνί σούβλας γάλακτος (κιλό)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Αρνί σούβλας γάλακτος (μερίδα)", "image": "img/menu/tzatziki.jpg" }
+        ]
+      },
+      {
+        "name": "Ψητά Γάστρας",
+        "items": [
+          { "name": "Αρνί ή κατσίκι στο φούρνο (κιλό)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Αρνί ή κατσίκι στο φούρνο (μερίδα)", "image": "img/menu/tzatziki.jpg" }
         ]
       }
+
     ]
   },
 
   "photos": {
-    "title": "Φωτογραφίες"
+    "title": "Φωτογραφίες",
+    "items": [
+      { "src": "img/photos/photo1.jpg", "alt": "Photo 1" },
+      { "src": "img/photos/photo2.jpg", "alt": "Photo 2" },
+      { "src": "img/photos/photo3.jpg", "alt": "Photo 3" },
+      { "src": "img/photos/photo4.jpg", "alt": "Photo 4" },
+      { "src": "img/photos/photo5.jpg", "alt": "Photo 5" }
+    ]
   },
 
   "events": {
     "title": "Εκδηλώσεις",
-    "subtitle": "Στην ταβέρνα μας φιλοξενούμε ιδιωτικές εκδηλώσεις, γιορτές και οικογενειακές συγκεντρώσεις σε έναν ζεστό και αυθεντικό χώρο. Επικοινωνήστε μαζί μας για να οργανώσουμε μαζί την εκδήλωσή σας όπως την έχετε φανταστεί."
+    "subtitle": "Στην ταβέρνα μας φιλοξενούμε ιδιωτικές εκδηλώσεις, γιορτές και οικογενειακές συγκεντρώσεις σε έναν ζεστό και αυθεντικό χώρο. Επικοινωνήστε μαζί μας για να οργανώσουμε μαζί την εκδήλωσή σας όπως την έχετε φανταστεί.",
+    "items": [
+      { "src": "img/events/event1.jpg", "alt": "Event 1" },
+      { "src": "img/events/event2.jpg", "alt": "Event 2" },
+      { "src": "img/events/event3.jpg", "alt": "Event 3" },
+      { "src": "img/events/event4.jpg", "alt": "Event 4" },
+      { "src": "img/events/event5.jpg", "alt": "Event 5" }
+    ]
   },
 
   "contact": {
     "title": "Επικοινωνία",
     "boxTitle": "Στοιχεία",
+
     "phoneLabel": "Τηλ:",
     "phoneValue": "+30 210 8952446",
+
     "addressLabel": "Διεύθυνση:",
     "addressValue": "Λεωφ. Βάρης 45, Βάρη 16672",
+
     "hoursLabel": "Ωράριο:",
     "hoursValue": "Καθημερινά 12:00–00:00",
+
     "callBtn": "Κλήση",
     "mapsBtn": "Άνοιγμα στο Maps",
     "mapsUrl": "https://maps.google.com/?q=37.8346448,23.7931274"

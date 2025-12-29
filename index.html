@@ -1,171 +1,141 @@
 <!doctype html>
 <html lang="el">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Ταβέρνα "Ο Τσολιάς"</title>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ταβέρνα "Ο Τσολιάς"</title>
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css" />
+</head>
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="styles.css">
-    </head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
 
-    <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+<!-- NAVBAR -->
+<nav id="mainNav" class="navbar navbar-expand-lg bg-white navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" id="brand" href="#home">Ταβέρνα</a>
 
-        <!-- NAVBAR -->
-        <nav id="mainNav" class="navbar navbar-expand-lg bg-white navbar-light fixed-top">
-            <div class="container">
+        <div class="d-flex gap-2 order-lg-3 ms-2">
+            <button id="lang-el" class="btn btn-outline-secondary btn-sm" type="button" aria-label="Ελληνικά" title="Ελληνικά">🇬🇷</button>
+            <button id="lang-en" class="btn btn-outline-secondary btn-sm" type="button" aria-label="English" title="English">🇬🇧</button>
+        </div>
 
-                <!-- Brand (θα γεμίσει από JSON) -->
-                <a class="navbar-brand fw-bold" id="brand" href="#home">Ταβέρνα</a>
+        <button class="navbar-toggler order-lg-2" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Άνοιγμα μενού">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <!-- Language buttons -->
-                <div class="d-flex gap-2 order-lg-3 ms-2">
-                    <button id="lang-el" class="btn btn-outline-secondary btn-sm" type="button" aria-label="Ελληνικά" title="Ελληνικά">🇬🇷</button>
-                    <button id="lang-en" class="btn btn-outline-secondary btn-sm" type="button" aria-label="English" title="English">🇬🇧</button>
-                </div>
+        <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" id="nav-home" href="#home">Αρχική</a></li>
+                <li class="nav-item"><a class="nav-link" id="nav-menu" href="#menu">Μενού</a></li>
+                <li class="nav-item"><a class="nav-link" id="nav-photos" href="#photos">Φωτογραφίες</a></li>
+                <li class="nav-item"><a class="nav-link" id="nav-events" href="#events">Εκδηλώσεις</a></li>
+                <li class="nav-item"><a class="nav-link" id="nav-contact" href="#contact">Επικοινωνία - Χάρτης</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-                <!-- Burger button (mobile) -->
-                <button class="navbar-toggler order-lg-2" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-                        aria-controls="navMenu" aria-expanded="false" aria-label="Άνοιγμα μενού">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<!-- HERO -->
+<header id="home" class="hero">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold" id="hero-title">Ταβέρνα «Ο Τσολιάς»</h1>
+        <p class="lead mt-3" id="hero-subtitle">...</p>
+    </div>
+</header>
 
-                <!-- Nav links -->
-                <div class="collapse navbar-collapse order-lg-1" id="navMenu">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" id="nav-home" href="#home">Αρχική</a></li>
-                        <li class="nav-item"><a class="nav-link" id="nav-menu" href="#menu">Μενού</a></li>
-                        <li class="nav-item"><a class="nav-link" id="nav-photos" href="#photos">Φωτογραφίες</a></li>
-                        <li class="nav-item"><a class="nav-link" id="nav-events" href="#events">Εκδηλώσεις</a></li>
-                        <li class="nav-item"><a class="nav-link" id="nav-contact" href="#contact">Επικοινωνία - Χάρτης</a></li>
-                    </ul>
-                </div>
+<!-- MENU -->
+<section id="menu" class="section-pad">
+    <div class="container">
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4">
+            <div>
+                <h2 class="fw-bold mb-1" id="menu-title">Μενού</h2>
+                <p class="text-muted mb-0" id="menu-subtitle">...</p>
             </div>
-        </nav>
+        </div>
 
-        <!-- HERO / HOME -->
-        <header id="home" class="hero">
-            <div class="container text-center">
-                <h1 class="display-4 fw-bold" id="hero-title">Ταβέρνα «Ο Τσολιάς»</h1>
-                <p class="lead mt-3" id="hero-subtitle">...</p>
-            </div>
-        </header>
+        <!-- JS will render one carousel per category -->
+        <div id="menu-container" class="d-grid gap-4"></div>
+    </div>
+</section>
 
-        <!-- MENU -->
-        <section id="menu" class="section-pad">
-            <div class="container">
-                <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4">
-                    <div>
-                        <h2 class="fw-bold mb-1" id="menu-title">Μενού</h2>
-                        <p class="text-muted mb-0" id="menu-subtitle">...</p>
-                    </div>
-                </div>
-                <!-- εδώ το JS θα φτιάξει cards με φωτογραφίες/τιμές -->
-                <div id="menu-container" class="row g-4"></div>
-            </div>
-        </section>
+<!-- PHOTOS -->
+<section id="photos" class="section-pad bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-1" id="photos-title">Φωτογραφίες</h2>
+        <div id="photos-carousel-wrap" class="mt-3"></div>
+    </div>
+</section>
 
-        <!-- PHOTOS -->
-        <section id="photos" class="section-pad bg-light">
-            <div class="container">
-                <h2 class="fw-bold mb-1" id="photos-title">Φωτογραφίες</h2>
+<!-- EVENTS -->
+<section id="events" class="section-pad bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-1" id="events-title">Εκδηλώσεις</h2>
+        <p class="text-muted mb-4" id="events-subtitle">...</p>
+        <div id="events-carousel-wrap"></div>
+    </div>
+</section>
 
-                <div class="row g-4 gallery">
-                    <div class="col-12 col-md-6 col-lg-4"><img src="img/photos/photo1.jpg" alt="Photo 1" class="shadow-sm"></div>
-                    <div class="col-12 col-md-6 col-lg-4"><img src="img/photos/photo2.jpg" alt="Photo 2" class="shadow-sm"></div>
-                    <div class="col-12 col-md-6 col-lg-4"><img src="img/photos/photo3.jpg" alt="Photo 3" class="shadow-sm"></div>
-                    <div class="col-12 col-md-6 col-lg-4"><img src="img/photos/photo4.jpg" alt="Photo 4" class="shadow-sm"></div>
-                    <div class="col-12 col-md-6 col-lg-4"><img src="img/photos/photo5.jpg" alt="Photo 5" class="shadow-sm"></div>
-                </div>
-            </div>
-        </section>
+<!-- CONTACT -->
+<section id="contact" class="section-pad">
+    <div class="container">
+        <h2 class="fw-bold mb-1" id="contact-title">Επικοινωνία</h2>
 
-        <!-- EVENTS -->
-        <section id="events" class="section-pad bg-light">
-            <div class="container">
-                <h2 class="fw-bold mb-1" id="events-title">Εκδηλώσεις</h2>
-                <p class="text-muted mb-4" id="events-subtitle">...</p>
-                <div class="row g-4 gallery">
-                    <div class="col-12 col-md-6 col-lg-4"><img src="img/events/event1.jpg" alt="Event 1" class="shadow-sm"></div>
-                    <div class="col-12 col-md-6 col-lg-4"><img src="img/events/event2.jpg" alt="Event 2" class="shadow-sm"></div>
-                    <div class="col-12 col-md-6 col-lg-4"><img src="img/events/event3.jpg" alt="Event 3" class="shadow-sm"></div>
-                    <div class="col-12 col-md-6 col-lg-4"><img src="img/events/event4.jpg" alt="Event 4" class="shadow-sm"></div>
-                    <div class="col-12 col-md-6 col-lg-4"><img src="img/events/event5.jpg" alt="Event 5" class="shadow-sm"></div>
-                </div>
-            </div>
-        </section>
+        <div class="row g-4 align-items-stretch">
+            <div class="col-12 col-lg-5">
+                <div class="p-4 border rounded-4 h-100">
+                    <h5 class="fw-bold" id="contact-box-title">Στοιχεία</h5>
 
-        <!-- CONTACT -->
-        <section id="contact" class="section-pad">
-            <div class="container">
-                <h2 class="fw-bold mb-1" id="contact-title">Επικοινωνία</h2>
+                    <p class="mb-2">
+                        <span class="fw-semibold" id="contact-phone-label">Τηλ:</span>
+                        <a id="contact-phone-value" href="tel:+302108952446">+30 210 8952446</a>
+                    </p>
 
-                <div class="row g-4 align-items-stretch">
-                    <div class="col-12 col-lg-5">
-                        <div class="p-4 border rounded-4 h-100">
-                            <h5 class="fw-bold" id="contact-box-title">Στοιχεία</h5>
+                    <p class="mb-2">
+                        <span class="fw-semibold" id="contact-address-label">Διεύθυνση:</span>
+                        <span id="contact-address-value">Λεωφ. Βάρης 45, Βάρη 16672</span>
+                    </p>
 
-                            <p class="mb-2">
-                                <span class="fw-semibold" id="contact-phone-label">Τηλ:</span>
-                                <a id="contact-phone-value">+30 210 8952446</a>
-                            </p>
+                    <p class="mb-4">
+                        <span class="fw-semibold" id="contact-hours-label">Ωράριο:</span>
+                        <span id="contact-hours-value">Καθημερινά 12:00–00:00</span>
+                    </p>
 
-                            <p class="mb-2">
-                                <span class="fw-semibold" id="contact-address-label">Διεύθυνση:</span>
-                                <span id="contact-address-value">Λεωφ. Βάρης 45, Βάρη 16672</span>
-                            </p>
-
-                            <p class="mb-4">
-                                <span class="fw-semibold" id="contact-hours-label">Ωράριο:</span>
-                                <span id="contact-hours-value">Καθημερινά 12:00–00:00</span>
-                            </p>
-
-                            <div class="d-flex gap-2 flex-wrap">
-                                <a class="btn btn-dark" id="contact-call-btn" href="tel:+302101234567">Κλήση</a>
-                                <a class="btn btn-outline-dark"
-                                   id="contact-maps-btn"
-                                   target="_blank"
-                                   rel="noopener"
-                                   href="#">Maps</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-7">
-                        <div class="ratio ratio-16x9 rounded-4 overflow-hidden border">
-
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12605.460107615107!2d23.79898135!3d37.8283395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1953c001766d1%3A0xdb2c93f114c63131!2zzqTOsc6yzq3Pgc69zrEgzqTPg86_zrvOuc6sz4I!5e0!3m2!1sel!2sgr!4v1766870329856!5m2!1sel!2sgr"
-                                    width="600"
-                                    height="450"
-                                    style="border:0;"
-                                    allowfullscreen=""
-                                    loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"
-                                    title="Map">
-                            </iframe>
-
-                        </div>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a class="btn btn-dark" id="contact-call-btn" href="tel:+302108952446">Κλήση</a>
+                        <a class="btn btn-outline-dark" id="contact-maps-btn" target="_blank" rel="noopener" href="#">Maps</a>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- FOOTER -->
-        <footer class="py-4 border-top">
-            <div class="container d-flex justify-content-between flex-wrap gap-2">
-                <small class="text-muted" id="footer-rights">...</small>
+            <div class="col-12 col-lg-7">
+                <div class="ratio ratio-16x9 rounded-4 overflow-hidden border">
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12605.460107615107!2d23.79898135!3d37.8283395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1953c001766d1%3A0xdb2c93f114c63131!2zzqTOsc6yzq3Pgc69zrEgzqTPg86_zrvOuc6sz4I!5e0!3m2!1sel!2sgr!4v1766870329856!5m2!1sel!2sgr"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Map">
+                    </iframe>
+                </div>
             </div>
-        </footer>
+        </div>
+    </div>
+</section>
 
-        <!-- Back to top -->
-        <button id="backToTop" class="btn btn-dark" type="button" aria-label="Επιστροφή στην αρχή">↑</button>
+<!-- FOOTER -->
+<footer class="py-4 border-top">
+    <div class="container">
+        <small class="text-muted" id="footer-rights">...</small>
+    </div>
+</footer>
 
-        <!-- Bootstrap JS bundle -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Our JS -->
-        <script src="app.js"></script>
-    </body>
+<!-- Back to top -->
+<button id="backToTop" class="btn btn-dark" type="button" aria-label="Επιστροφή στην αρχή">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
 </html>

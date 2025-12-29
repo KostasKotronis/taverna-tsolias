@@ -1,54 +1,57 @@
-/* 1) Smooth scroll όταν πατάς links (#menu κλπ) */
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 80px; }
 
-/* 2) Επειδή το navbar είναι fixed-top, αλλιώς "κρύβει" την αρχή του section */
-section {
-  scroll-margin-top: 80px; /* άλλαξέ το αν το navbar γίνει πιο ψηλό */
-}
+.navbar { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); }
 
-/* 3) Μικρή σκιά στο navbar για να ξεχωρίζει από το background */
-.navbar {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* 4) Hero: γεμίζει την οθόνη και έχει background φωτογραφία + σκοτεινό overlay */
 .hero {
   min-height: 100vh;
   background:
     linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-    url("img/hero.jpg") center/cover no-repeat;
-
+    url("img/hero.jpg") center / cover no-repeat;
   color: #fff;
   display: flex;
   align-items: center;
 }
 
-/* 5) Κοινό padding για sections */
-.section-pad {
-  padding: 96px 0;
-}
-
-/* Σε κινητό λίγο μικρότερο padding */
+.section-pad { padding: 96px 0; }
 @media (max-width: 576px) {
-  .section-pad {
-    padding: 72px 0;
-  }
+  .section-pad { padding: 72px 0; }
 }
 
-/* 6) Gallery εικόνες (σταθερό ύψος, crop ωραίο) */
-.gallery img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
+/* Shared carousel look */
+.carousel .carousel-inner {
   border-radius: 14px;
+  overflow: hidden;
 }
 
-/* 7) Back-to-top button: κρυφό αρχικά, εμφανίζεται με class .show */
+.carousel-img {
+  width: 100%;
+  height: 650px;          /* same everywhere */
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .carousel-img { height: 500px; }
+}
+
+/* Caption background for readability */
+.carousel-caption {
+  background: rgba(0,0,0,.45);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+/* Slightly adjust indicators visibility on busy photos */
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+/* Back-to-top */
 #backToTop {
   position: fixed !important;
-
   right: 18px !important;
   left: auto !important;
   bottom: 18px !important;
@@ -65,22 +68,11 @@ section {
   transform: translateY(8px);
   transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
 
-  z-index: 1050; /* πάνω και από navbar */
+  z-index: 1050;
 }
 
 #backToTop.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-}
-
-.hero {
-  min-height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-    url("img/hero.jpg") center / cover no-repeat;
-
-  color: #fff;
-  display: flex;
-  align-items: center;
 }

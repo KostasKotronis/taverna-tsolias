@@ -10,83 +10,149 @@
   },
 
   "hero": {
-    "title": "Restaurant «O Tsolias»",
+    "title": "Restaurant “O Tsolias”",
     "subtitle": "Traditional flavors • Fresh meats • Cozy atmosphere"
   },
 
   "menu": {
     "title": "Menu",
-    "subtitle": "Sample items — customize as needed.",
-    "pdfBtn": "Download PDF",
-
+    "subtitle": "...",
     "categories": [
       {
-        "name": "Starters",
+        "name": "Salads",
         "items": [
-          {
-            "name": "Tzatziki",
-            "price": "€3.50",
-            "desc": "Yogurt, cucumber, garlic.",
-            "image": "img/menu/tzatziki.jpg"
-          },
-          {
-            "name": "Saganaki",
-            "price": "€5.50",
-            "desc": "Pan-fried cheese.",
-            "image": "img/menu/saganaki.jpg"
-          },
-          {
-            "name": "Greek Salad",
-            "price": "€7.00",
-            "desc": "Tomato, cucumber, feta, olive oil.",
-            "image": "img/menu/horiatiki.jpg"
-          }
+          { "name": "Tomato and cucumber salad", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Cucumber salad", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Greek salad", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Tsolias special mixed salad", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Plain mixed salad", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Cabbage salad", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Cretan dakos", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Lettuce salad", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Boiled beetroots", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Boiled greens of the season", "image": "img/menu/tzatziki.jpg" }
         ]
       },
       {
-        "name": "Main Dishes",
+        "name": "Cheeses",
         "items": [
-          {
-            "name": "Pork Steak",
-            "price": "€11.00",
-            "desc": "Served with fries and salad.",
-            "image": "img/menu/porksteak.jpg"
-          },
-          {
-            "name": "Calamari",
-            "price": "€13.50",
-            "desc": "Fried or grilled.",
-            "image": "img/menu/kalamari.jpg"
-          },
-          {
-            "name": "Moussaka",
-            "price": "€10.50",
-            "desc": "Homemade, oven-baked.",
-            "image": "img/menu/moussaka.jpg"
-          }
+          { "name": "Kefalograviera", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Saganaki (pan-seared cheese)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Feta cheese", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Baked feta cheese (with tomato & pepper)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Grilled talagani cheese", "image": "img/menu/tzatziki.jpg" }
+        ]
+      },
+      {
+        "name": "Hot Appetizers",
+        "items": [
+          { "name": "Fried zucchini", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Eggplant souffle", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Fried eggplants", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Fried / grilled peppers", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Grilled vegetables", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Grilled vegetables with talagani cheese", "image": "img/menu/tzatziki.jpg" },
+          { "name": "French fries", "image": "img/menu/tzatziki.jpg" },
+          { "name": "French fries with grated cheese", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Oven baked potatoes", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Cheese hand pies", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Lamb head", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Kokoretsi (roasted lamb offal)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Kontosouvli (spit roasted pork chunks)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Country sausage (pork - beef)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Grilled appetizers per kg", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Grilled appetizers (portion)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Lamb liver", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Veal liver", "image": "img/menu/tzatziki.jpg" }
+        ]
+      },
+      {
+        "name": "Cold Appetizers",
+        "items": [
+          { "name": "Charred eggplant spread", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Tzatziki", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Spicy cheese spread", "image": "img/menu/tzatziki.jpg" }
+        ]
+      },
+      {
+        "name": "From our Grill",
+        "items": [
+          { "name": "Lamb chops (kg)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Lamb leg chops (kg)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Suckling lamb chops (portion)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Veal minced meat patties", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Large ox steak (kg)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Large ox steak (portion)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Calf steak (portion)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Rib eye steak (kg)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Grilled mutton meat (kg)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Veal fillet", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Veal skewer", "image": "img/menu/tzatziki.jpg" },
+          { "name": "T-bone steak (kg)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Pork steak", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Pork fillet", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Pork belly chops", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Pork skewer", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Chicken (kg)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Chicken (portion)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Chicken skewer", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Chicken fillet", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Stuffed beef with feta cheese", "image": "img/menu/tzatziki.jpg" }
+        ]
+      },
+      {
+        "name": "Spit Roasted Meat",
+        "items": [
+          { "name": "Spit roasted suckling lamb (kg)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Spit roasted suckling lamb (portion)", "image": "img/menu/tzatziki.jpg" }
+        ]
+      },
+      {
+        "name": "Oven Baked Meat in Terracotta Pots",
+        "items": [
+          { "name": "Oven baked lamb or goat (kg)", "image": "img/menu/tzatziki.jpg" },
+          { "name": "Oven baked lamb or goat (portion)", "image": "img/menu/tzatziki.jpg" }
         ]
       }
     ]
   },
 
   "photos": {
-    "title": "Photos"
+    "title": "Photos",
+    "items": [
+      { "src": "img/photos/photo1.jpg", "alt": "Photo 1" },
+      { "src": "img/photos/photo2.jpg", "alt": "Photo 2" },
+      { "src": "img/photos/photo3.jpg", "alt": "Photo 3" },
+      { "src": "img/photos/photo4.jpg", "alt": "Photo 4" },
+      { "src": "img/photos/photo5.jpg", "alt": "Photo 5" }
+    ]
   },
 
   "events": {
     "title": "Events",
-    "subtitle": "We host private events, celebrations, and family gatherings in a warm and authentic setting. Contact us to plan your event together, exactly the way you imagine it."
+    "subtitle": "We host private events, celebrations, and family gatherings in a warm and authentic setting. Contact us to plan your event together, exactly the way you imagine it.",
+    "items": [
+      { "src": "img/events/event1.jpg", "alt": "Event 1" },
+      { "src": "img/events/event2.jpg", "alt": "Event 2" },
+      { "src": "img/events/event3.jpg", "alt": "Event 3" },
+      { "src": "img/events/event4.jpg", "alt": "Event 4" },
+      { "src": "img/events/event5.jpg", "alt": "Event 5" }
+    ]
   },
 
   "contact": {
     "title": "Contact",
     "boxTitle": "Details",
+
     "phoneLabel": "Phone:",
     "phoneValue": "+30 210 8952446",
+
     "addressLabel": "Address:",
     "addressValue": "Varis Ave. 45, Vari 16672",
+
     "hoursLabel": "Hours:",
     "hoursValue": "Daily 12:00–00:00",
+
     "callBtn": "Call",
     "mapsBtn": "Open in Maps",
     "mapsUrl": "https://maps.google.com/?q=37.8346448,23.7931274"
